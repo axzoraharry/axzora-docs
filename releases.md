@@ -12,6 +12,7 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.19 | 211 | [v18.19](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.19) | Depth — 3D panel entrances, staggered rows, press tilt, reduced-motion aware |
 | 18.18 | 210 | [v18.18](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.18) | Hub panel — latency, history, live OTA channel readout |
 | 18.17 | 209 | — | Command Deck — ten quick actions, type-ahead, history, copy/export |
 | 18.16 | 96 | [v18.16](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.16) | Omarchy terminal home |
@@ -21,6 +22,11 @@ one before it. `versionCode` always increases; Android refuses anything else.
 | 18.12 | 92 | [v18.12](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.12) | Fastfetch system card |
 | 18.11 | 91 | [v18.11](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.11) | Swipe gestures |
 | 18.10 | 90 | [v18.10](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.10) | Terminal home groundwork |
+
+18.19 was built on-device without an Android SDK: the web assets were re-packed
+into the signed APK and `versionCode`/`versionName` patched in the binary
+manifest, then re-signed with the release key. Kotlin changes need a real
+`assembleRelease`, so they ship only in builds made from a tree with the SDK.
 
 Release assets live in
 [axzoraharry/axzora-ota](https://github.com/axzoraharry/axzora-ota/releases) —
