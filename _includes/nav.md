@@ -1,1 +1,1 @@
-[Home](/) · [Services](/services/) · [Docs](/docs/) · [Contact](/contact/)
+[Home](/) · [Services](/services/) · [Docs](/docs/) · [Releases](/releases/) · [Contact](/contact/)

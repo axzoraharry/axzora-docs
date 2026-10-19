@@ -16,4 +16,4 @@ applications, payment and ledger platforms, and custom automation.
 - Payment, ledger, and fintech infrastructure
 - Custom automation and internal tooling
 
-[See our services](/services/) · [Get in touch](/contact/)
+[See our services](/services/) · [AxzoraOS documentation](/docs/) · [Releases](/releases/) · [Get in touch](/contact/)
