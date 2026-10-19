@@ -12,6 +12,7 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.20 | 212 | [v18.20](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.20) | Depth, natively — Compose screen transitions, press tilt, admin bound to one device |
 | 18.19 | 211 | [v18.19](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.19) | Depth — 3D panel entrances, staggered rows, press tilt, reduced-motion aware |
 | 18.18 | 210 | [v18.18](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.18) | Hub panel — latency, history, live OTA channel readout |
 | 18.17 | 209 | — | Command Deck — ten quick actions, type-ahead, history, copy/export |
@@ -25,8 +26,13 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 18.19 was built on-device without an Android SDK: the web assets were re-packed
 into the signed APK and `versionCode`/`versionName` patched in the binary
-manifest, then re-signed with the release key. Kotlin changes need a real
-`assembleRelease`, so they ship only in builds made from a tree with the SDK.
+manifest, then re-signed with the release key.
+
+18.20 is the first build compiled on the phone itself. AGP ships an x86_64-only
+`aapt2`; pointing Gradle at an arm64 `aapt2` (`-Pandroid.aapt2FromMavenOverride`)
+lets the whole `:app:assembleRelease` run — Kotlin, R8, `lintVitalRelease`,
+signing — with no SDK platform tools beyond `android.jar`. That is how the
+Compose depth transitions and the keystore-bound admin console reached a device.
 
 Release assets live in
 [axzoraharry/axzora-ota](https://github.com/axzoraharry/axzora-ota/releases) —
