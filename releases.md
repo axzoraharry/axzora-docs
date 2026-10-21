@@ -12,6 +12,7 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.21 | 213 | [v18.21](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.21) | Circle secrets — a circle is a code *and* a 192-bit secret; God's Eye reads only while sharing is on |
 | 18.20 | 212 | [v18.20](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.20) | Depth, natively — Compose screen transitions, press tilt, admin bound to one device |
 | 18.19 | 211 | [v18.19](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.19) | Depth — 3D panel entrances, staggered rows, press tilt, reduced-motion aware |
 | 18.18 | 210 | [v18.18](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.18) | Hub panel — latency, history, live OTA channel readout |
@@ -33,6 +34,15 @@ manifest, then re-signed with the release key.
 lets the whole `:app:assembleRelease` run — Kotlin, R8, `lintVitalRelease`,
 signing — with no SDK platform tools beyond `android.jar`. That is how the
 Compose depth transitions and the keystore-bound admin console reached a device.
+
+18.21 closes a privacy hole rather than adding a feature. A circle used to be a
+short word — `/godseye?code=X` answered with a family's live positions to anyone
+who guessed or overheard it. A circle is now a code plus a secret the server
+mints; the creator sees it once as a join string `CODE~SECRET`, secrets are
+stored `0600`, comparisons are constant time, and the `403` depends only on what
+the caller sent so codes cannot be probed. God's Eye also stopped talking to the
+server when sharing was switched off. **Circles created on 18.20 or earlier have
+no secret and are refused — re-create them and share the new join string.**
 
 Release assets live in
 [axzoraharry/axzora-ota](https://github.com/axzoraharry/axzora-ota/releases) —
