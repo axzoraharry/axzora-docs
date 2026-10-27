@@ -12,6 +12,8 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.36 | 228 | [v18.36](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.36) | The on-device model proves it is a model: the archive is checked before it is called installed, a damaged file is named and offers **Repair**, resumes that arrive at the wrong offset are thrown away, and the default model is the public 547 MB Qwen 2.5 0.5B instead of a gated repo |
+| 18.35 | 227 | ↑ v18.36 | The same model fix, uploaded minutes earlier with "Blank = default Gemma" still on the URL field; superseded |
 | 18.34 | 226 | [v18.34](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.34) | Settings → About names the publisher — Axzora Private Limited, `harry@axzora.com`, +91 96969 69691 — tappable to mail or dial; the server reports the same three facts at `/api/identity` |
 | 18.33 | 225 | ↑ v18.34 | A 1.6 GB model download survives a bad connection: `Range` resume, eight retries, the partial file kept across attempts and across app updates |
 | 18.32 | 224 | ↑ v18.34 | A pinned server is actually used — the discovery loop read the first frame's empty settings and overwrote the pin with the cloud host |
@@ -75,6 +77,30 @@ no secret and are refused — re-create them and share the new join string.**
 Release assets live in
 [axzoraharry/axzora-ota](https://github.com/axzoraharry/axzora-ota/releases) —
 big binaries belong there as Release assets, never in a repository tree.
+
+
+## A model that was only pretending to be installed
+
+A 1.6 GB download arrived damaged — 1,647 MB on a 1,597 MB file — and Settings
+said **Installed (1647MB)** because the only test was `length > 50MB`. Pressing
+Load produced MediaPipe's C++ stack trace: *"Unable to read the file in zip
+archive"*. A `.task` model is a ZIP archive, and the bytes on disk were not one.
+
+18.36 checks the archive instead of its size: a local header near the start, an
+end-of-central-directory record in the last 64 KB, and a central directory that
+ends exactly where the file ends. That gives four named failures — truncated,
+spliced, wrong file, too small — a sentence saying which one happened, and a
+**Repair** button. Resumes are also stricter: a `206` that does not continue at
+the exact byte offset, or a body longer than the server promised, now discards
+the partial file instead of appending to it. Two downloads can no longer race on
+one `.part`, and a partial file remembers which URL it came from.
+
+The default model moved off `litert-community/Gemma3-1B-IT` — a **gated** repo,
+so a plain Download answered 401 without a HuggingFace token — to the public
+`Qwen2.5-0.5B-Instruct` 8-bit task: 547 MB, no account, and published in the
+bundle format MediaPipe reads. Both published Qwen bundles were read back from
+HuggingFace range-by-range and pass the same validation, so a genuine `.task`
+can never be reported as damaged.
 
 ## Installing a build
 
