@@ -12,6 +12,7 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.46 | 238 | [v18.46](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.46) | Mr Happy speaks offline — sherpa-onnx runs a Piper *lessac* voice on-device, the 18.6 MB model is bundled, and a `speak` tool + spoken memory/hub replies close the "no cloud" gap |
 | 18.45 | 237 | [v18.45](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.45) | Happy Paisa by voice: `balance`/`mint`/`send` crashed on first use — a one-time holder built the wallet object with a null wallet, a linkage error no `catch(Exception)` can see; the wallet is now fetched per call |
 | 18.44 | 236 | ↑ v18.45 | A live "paisa" balance on the home card, and the server finder probes loopback before any cached host |
 | 18.43 | 235 | ↑ v18.45 | The local hub is preferred on-device (127.0.0.1) |
