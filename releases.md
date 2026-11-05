@@ -12,6 +12,15 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.45 | 237 | [v18.45](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.45) | Happy Paisa by voice: `balance`/`mint`/`send` crashed on first use — a one-time holder built the wallet object with a null wallet, a linkage error no `catch(Exception)` can see; the wallet is now fetched per call |
+| 18.44 | 236 | ↑ v18.45 | A live "paisa" balance on the home card, and the server finder probes loopback before any cached host |
+| 18.43 | 235 | ↑ v18.45 | The local hub is preferred on-device (127.0.0.1) |
+| 18.42 | 234 | ↑ v18.45 | Every installed app on the home screen, four to a row |
+| 18.41 | 233 | ↑ v18.45 | Intermediate build |
+| 18.40 | 232 | ↑ v18.45 | Happy Paisa voice tool wired into Mr Happy |
+| 18.39 | 231 | ↑ v18.45 | Intermediate build |
+| 18.38 | 230 | ↑ v18.45 | The admin console no longer wipes your code and seat on a hub outage |
+| 18.37 | 229 | [v18.37](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.37) | Mr Happy fully Axzora-branded — Axzora Core headers, wake words "Axzora"/"Mr Happy" |
 | 18.36 | 228 | [v18.36](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.36) | The on-device model proves it is a model: the archive is checked before it is called installed, a damaged file is named and offers **Repair**, resumes that arrive at the wrong offset are thrown away, and the default model is the public 547 MB Qwen 2.5 0.5B instead of a gated repo |
 | 18.35 | 227 | ↑ v18.36 | The same model fix, uploaded minutes earlier with "Blank = default Gemma" still on the URL field; superseded |
 | 18.34 | 226 | [v18.34](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.34) | Settings → About names the publisher — Axzora Private Limited, `harry@axzora.com`, +91 96969 69691 — tappable to mail or dial; the server reports the same three facts at `/api/identity` |
