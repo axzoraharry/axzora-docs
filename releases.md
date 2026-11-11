@@ -12,6 +12,7 @@ one before it. `versionCode` always increases; Android refuses anything else.
 
 | Version | Code | Release | Headline |
 | --- | --- | --- | --- |
+| 18.49 | 241 | [v18.49](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.49) | **Prism 4D HUD** — the Mr Happy HUD becomes one 3D stage: staggered depth choreography, ripple/tilt micro-interactions, focus hand-off, a time-trail transcript, ambient orb sway, and full `prefers-reduced-motion` support; also fixes the stale HUD version label |
 | 18.48 | 240 | [v18.48](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.48) | The everything-hub moves to :8899 so it and the axzora-server (:8800 OTA/ledger/admin) can run at once — Mr Happy's `/api/hub` voice app-opening and the hub WebView point at the right port |
 | 18.47 | 239 | [v18.47](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.47) | Offline voice actually speaks — `piperPhonemizeInitialize` returns the espeak-ng sample rate (22050) on success, not 0, so a working phonemizer was being marked failed and Mr Happy stayed silent; now fail-loud with a VOICE badge |
 | 18.46 | 238 | [v18.46](https://github.com/axzoraharry/axzora-ota/releases/tag/v18.46) | Mr Happy speaks offline — sherpa-onnx runs a Piper *lessac* voice on-device, the 18.6 MB model is bundled, and a `speak` tool + spoken memory/hub replies close the "no cloud" gap |
